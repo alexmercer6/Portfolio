@@ -1,0 +1,21 @@
+.navbar {
+    padding: 20px;
+    position: sticky;
+    top: 0;
+}
+
+.navbar > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.navbar > div > h1 {
+    flex-grow: 1;
+}
+
+.nav-link {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
