@@ -3,7 +3,7 @@ import { Button, CircularProgress, TextField } from "@mui/material"
 import { useState, useRef } from "react"
 import emailjs from "@emailjs/browser"
 
-function ContactMe() {
+function ContactMe({ darkmode, setDarkmode }) {
     const [msg, setMsg] = useState("Send Details")
     const [errorMsg, setErrorMsg] = useState("")
     const form = useRef()
@@ -37,21 +37,37 @@ function ContactMe() {
     }
 
     return (
-        <div className="contact-me">
+        <div className={darkmode ? "dark-mode contact-me" : "contact-me"}>
             <h1>Contact Me</h1>
             <p style={{ fontSize: "20px", textAlign: "center" }}>
-                Hi! 👋 Would you like me to join your team? Collaborate? Or just
+                Hi! Would you like me to join your team? Collaborate? Or just
                 chat? <br></br>Leave your details down below and we can get
-                started :)
+                started!
             </p>
             <form className="contact-form" ref={form}>
-                <TextField label="Name" variant="filled" name="name" />
-                <TextField label="Email" variant="filled" name="email" />
-                <TextField label="Company" variant="filled" name="company" />
+                <TextField
+                    label="Name"
+                    variant="filled"
+                    name="name"
+                    sx={darkmode && { bgcolor: "white" }}
+                />
+                <TextField
+                    label="Email"
+                    variant="filled"
+                    name="email"
+                    sx={darkmode && { bgcolor: "white" }}
+                />
+                <TextField
+                    label="Company"
+                    variant="filled"
+                    name="company"
+                    sx={darkmode && { bgcolor: "white" }}
+                />
                 <TextField
                     label="Message"
                     variant="filled"
                     name="message"
+                    sx={darkmode && { bgcolor: "white" }}
                     multiline
                     rows={4}
                 />

@@ -2,6 +2,10 @@
     padding: 20px;
     position: sticky;
     top: 0;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    z-index: 1500;
+
 }
 
 .navbar > div {
