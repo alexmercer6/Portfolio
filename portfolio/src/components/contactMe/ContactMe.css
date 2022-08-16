@@ -1,0 +1,20 @@
+.contact-me {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 300px;
+    height: 500px;
+    width: 500px;
+    /* border: 1px solid rgb(194, 194, 194); */
+    border-radius: 10px;
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+
+}
