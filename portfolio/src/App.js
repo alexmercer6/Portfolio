@@ -6,6 +6,8 @@ import Navbar from "./components/navbar/Navbar"
 import Projects from "./components/projects/Projects"
 import { Parallax, ParallaxProvider } from "react-scroll-parallax"
 import { useState } from "react"
+import { Fab } from "@mui/material"
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp"
 
 function App() {
     const [darkmode, setDarkmode] = useState(false)
@@ -23,6 +25,15 @@ function App() {
                 <Parallax opacity={[-1.5, 4]}>
                     <ContactMe darkmode={darkmode} setDarkmode={setDarkmode} />
                 </Parallax>
+                <Fab
+                    size="medium"
+                    color="primary"
+                    aria-label="add"
+                    href="#"
+                    sx={{ position: "fixed", bottom: 60, right: 60 }}
+                >
+                    <KeyboardArrowUpIcon />
+                </Fab>
             </ParallaxProvider>
         </div>
     )

@@ -5,6 +5,7 @@ import wordle_gif from "../../assets/wordle.gif"
 function Projects() {
     return (
         <div
+            id="projects"
             style={{
                 height: "100vh",
                 display: "flex",
