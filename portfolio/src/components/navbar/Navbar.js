@@ -43,7 +43,7 @@ function Navbar({ darkmode, setDarkmode }) {
                             <Link
                                 sx={{
                                     display: { md: "block", xs: "none" },
-                                    mr: 1,
+                                    mr: 2,
                                 }}
                                 underline="hover"
                                 color={"black"}
@@ -57,7 +57,7 @@ function Navbar({ darkmode, setDarkmode }) {
                             <Link
                                 sx={{
                                     display: { md: "block", xs: "none" },
-                                    mr: 1,
+                                    mr: 2,
                                 }}
                                 underline="hover"
                                 color={"black"}
@@ -71,6 +71,7 @@ function Navbar({ darkmode, setDarkmode }) {
                             <Link
                                 sx={{
                                     display: { md: "block", xs: "none" },
+                                    mr: 2,
                                 }}
                                 underline="hover"
                                 color={"black"}
