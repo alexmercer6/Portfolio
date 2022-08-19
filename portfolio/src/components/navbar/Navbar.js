@@ -14,7 +14,7 @@ import { useState } from "react"
 // import LaptopMacIcon from "@mui/icons-material/LaptopMac"
 
 function Navbar({ darkmode, setDarkmode }) {
-    const pages = ["About", "Projects", "Contact Me"]
+    const sections = ["About", "Projects", "Contact Me"]
     const [anchorElNav, setAnchorElNav] = useState(null)
     const handleCloseNavMenu = () => {
         setAnchorElNav(null)
@@ -39,22 +39,11 @@ function Navbar({ darkmode, setDarkmode }) {
                             >
                                 Lets Build.
                             </Typography>
-                            <IconButton
-                                size="large"
-                                edge="start"
-                                color="inherit"
-                                aria-label="menu"
-                                sx={{
-                                    mr: 2,
-                                    display: { md: "none" },
-                                    justifySelf: "flex-end",
-                                }}
-                            >
-                                <MenuIcon />
-                            </IconButton>
-                            {pages.map((section) => {
+
+                            {sections.map((section, index) => {
                                 return (
                                     <Link
+                                        key={index}
                                         sx={{
                                             display: {
                                                 md: "block",
@@ -78,7 +67,6 @@ function Navbar({ darkmode, setDarkmode }) {
 
                             <Box
                                 sx={{
-                                    flexGrow: 1,
                                     display: { xs: "flex", md: "none" },
                                 }}
                             >
@@ -110,14 +98,18 @@ function Navbar({ darkmode, setDarkmode }) {
                                         display: { xs: "block", md: "none" },
                                     }}
                                 >
-                                    {pages.map((page) => (
+                                    {sections.map((section) => (
                                         <MenuItem
-                                            key={page}
+                                            key={section}
                                             onClick={handleCloseNavMenu}
                                         >
-                                            <Typography textAlign="center">
-                                                {page}
-                                            </Typography>
+                                            <Link
+                                                href={`#${section}`}
+                                                underline="hover"
+                                                color={"black"}
+                                            >
+                                                {section}
+                                            </Link>
                                         </MenuItem>
                                     ))}
                                 </Menu>
