@@ -1,23 +1,15 @@
+import "./Projects.css"
 import Cards from "./Cards"
 import grow_gif from "../../assets/grow_app.gif"
 import zing_gif from "../../assets/zing.gif"
 import wordle_gif from "../../assets/wordle.gif"
 function Projects() {
     return (
-        <div
-            style={{
-                height: "100vh",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexWrap: "wrap",
-                flexDirection: "column",
-            }}
-        >
+        <div className="projects" id="Projects">
             <div>
                 <h1>Projects</h1>
             </div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            <div className="project-cards">
                 <Cards
                     title={"Grow - Baby Milestones"}
                     details={

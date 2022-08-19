@@ -2,7 +2,7 @@ import "./About.css"
 
 function About() {
     return (
-        <div className="about-page">
+        <div className="about-page" id="About">
             <div>
                 <h1>About Me</h1>
                 <p style={{ fontSize: "25px" }}>

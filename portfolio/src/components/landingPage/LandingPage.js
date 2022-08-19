@@ -6,11 +6,11 @@ function LandingPage() {
         <div className="landing-page">
             <div className="title-container">
                 <ParallaxProvider>
-                    <Parallax translateX={[170, -200]} opacity={[3, -1]}>
+                    <Parallax opacity={[3, -1]}>
                         <h1 className="title">Alex Mercer.</h1>
                     </Parallax>
 
-                    <Parallax translateX={[0, 0]} opacity={[2, -0.9]}>
+                    <Parallax opacity={[2, -0.9]}>
                         <h3>Full Stack Developer</h3>
                     </Parallax>
                 </ParallaxProvider>
@@ -18,5 +18,8 @@ function LandingPage() {
         </div>
     )
 }
+
+// translateX={[170, -200]}
+// translateX={[0, 0]}
 
 export default LandingPage

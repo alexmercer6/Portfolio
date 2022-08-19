@@ -1,0 +1,15 @@
+.projects {
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
