@@ -19,7 +19,7 @@ function App() {
                 <Parallax opacity={[-1.5, 4]}>
                     <About />
                 </Parallax>
-                <Parallax opacity={[-1.5, 4]}>
+                <Parallax opacity={[-1, 4]}>
                     <Projects />
                 </Parallax>
                 <Parallax opacity={[-1.5, 4]}>
