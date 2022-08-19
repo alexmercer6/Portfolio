@@ -4,12 +4,25 @@ import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
-import Button from "@mui/material/Button"
-import IconButton from "@mui/material/IconButton"
+import Menu from "@mui/material/Menu"
 import MenuIcon from "@mui/icons-material/Menu"
+import MenuItem from "@mui/material/MenuItem"
+
+import IconButton from "@mui/material/IconButton"
+import { useState } from "react"
+
 // import LaptopMacIcon from "@mui/icons-material/LaptopMac"
 
 function Navbar({ darkmode, setDarkmode }) {
+    const pages = ["About", "Projects", "Contact Me"]
+    const [anchorElNav, setAnchorElNav] = useState(null)
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null)
+    }
+
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget)
+    }
     const handleChange = () => {
         setDarkmode((prevMode) => !prevMode)
     }
@@ -39,85 +52,79 @@ function Navbar({ darkmode, setDarkmode }) {
                             >
                                 <MenuIcon />
                             </IconButton>
-                            {/* <div className="nav-link"> */}
-                            <Link
-                                sx={{
-                                    display: { md: "block", xs: "none" },
-                                    mr: 2,
-                                }}
-                                underline="hover"
-                                color={"black"}
-                                href="#about"
-                            >
-                                <strong>About</strong>
-                            </Link>
-                            {/* </div> */}
+                            {pages.map((section) => {
+                                return (
+                                    <Link
+                                        sx={{
+                                            display: {
+                                                md: "block",
+                                                xs: "none",
+                                            },
+                                            mr: 2,
+                                        }}
+                                        underline="hover"
+                                        color={"black"}
+                                        href={`#${section}`}
+                                    >
+                                        {section}
+                                    </Link>
+                                )
+                            })}
 
-                            {/* <div className="nav-link"> */}
-                            <Link
-                                sx={{
-                                    display: { md: "block", xs: "none" },
-                                    mr: 2,
-                                }}
-                                underline="hover"
-                                color={"black"}
-                                href="#projects"
-                            >
-                                <strong>Projects</strong>
-                            </Link>
-                            {/* </div> */}
-
-                            {/* <div className="nav-link"> */}
-                            <Link
-                                sx={{
-                                    display: { md: "block", xs: "none" },
-                                    mr: 2,
-                                }}
-                                underline="hover"
-                                color={"black"}
-                                href="#contact"
-                            >
-                                <strong>Contact me</strong>
-                            </Link>
-                            {/* </div> */}
                             <Switch
                                 checked={darkmode}
                                 onChange={handleChange}
                             />
+
+                            <Box
+                                sx={{
+                                    flexGrow: 1,
+                                    display: { xs: "flex", md: "none" },
+                                }}
+                            >
+                                <IconButton
+                                    size="large"
+                                    aria-label="account of current user"
+                                    aria-controls="menu-appbar"
+                                    aria-haspopup="true"
+                                    onClick={handleOpenNavMenu}
+                                    color="inherit"
+                                >
+                                    <MenuIcon />
+                                </IconButton>
+                                <Menu
+                                    id="menu-appbar"
+                                    anchorEl={anchorElNav}
+                                    anchorOrigin={{
+                                        vertical: "bottom",
+                                        horizontal: "left",
+                                    }}
+                                    keepMounted
+                                    transformOrigin={{
+                                        vertical: "top",
+                                        horizontal: "left",
+                                    }}
+                                    open={Boolean(anchorElNav)}
+                                    onClose={handleCloseNavMenu}
+                                    sx={{
+                                        display: { xs: "block", md: "none" },
+                                    }}
+                                >
+                                    {pages.map((page) => (
+                                        <MenuItem
+                                            key={page}
+                                            onClick={handleCloseNavMenu}
+                                        >
+                                            <Typography textAlign="center">
+                                                {page}
+                                            </Typography>
+                                        </MenuItem>
+                                    ))}
+                                </Menu>
+                            </Box>
                         </Toolbar>
                     </AppBar>
                 </Box>
-
-                {/* <div className="nav-link">
-                    <Link
-                        underline="hover"
-                        color={darkmode ? "white" : "black"}
-                        href="#about"
-                    >
-                        About
-                    </Link>
-                </div>
-
-                <div className="nav-link">
-                    <Link
-                        underline="hover"
-                        color={darkmode ? "white" : "black"}
-                        href="#projects"
-                    >
-                        Projects
-                    </Link>
-                </div>
-
-                <div className="nav-link">
-                    <Link
-                        underline="hover"
-                        color={darkmode ? "white" : "black"}
-                        href="#contact"
-                    >
-                        Contact me
-                    </Link>
-                </div>
-                <Switch checked={darkmode} onChange={handleChange} /> */}
             </div>
         </div>
     )

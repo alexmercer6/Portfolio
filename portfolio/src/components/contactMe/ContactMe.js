@@ -39,7 +39,7 @@ function ContactMe({ darkmode, setDarkmode }) {
     return (
         <div
             className={darkmode ? "dark-mode contact-me" : "contact-me"}
-            id="contact"
+            id="Contact Me"
         >
             <h1>Contact Me</h1>
             <p style={{ fontSize: "20px", textAlign: "center" }}>
