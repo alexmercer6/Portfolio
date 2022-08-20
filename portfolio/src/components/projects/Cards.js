@@ -3,7 +3,7 @@ import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
 import CardMedia from "@mui/material/CardMedia"
 import Typography from "@mui/material/Typography"
-import { Button, CardActionArea, CardActions } from "@mui/material"
+import { Button, CardActionArea, CardActions, Divider } from "@mui/material"
 
 export default function MultiActionAreaCard({
     title,
@@ -21,6 +21,7 @@ export default function MultiActionAreaCard({
                     image={image}
                     alt={title + " image"}
                 />
+                <Divider />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {title}

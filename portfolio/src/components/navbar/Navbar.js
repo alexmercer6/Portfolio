@@ -29,7 +29,7 @@ function Navbar({ darkmode, setDarkmode }) {
     return (
         <div>
             <Box sx={{ margin: 0 }}>
-                <AppBar position="static" color="">
+                <AppBar position="fixed" color="">
                     <Toolbar>
                         <Typography
                             variant="h6"
