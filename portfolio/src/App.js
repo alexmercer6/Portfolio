@@ -15,25 +15,30 @@ function App() {
         <div className={darkmode ? "App dark-mode" : "App"}>
             <ParallaxProvider>
                 <Navbar darkmode={darkmode} setDarkmode={setDarkmode} />
-                <LandingPage />
-                <Parallax opacity={[-1.5, 4]}>
-                    <About />
-                </Parallax>
-                <Parallax opacity={[-1, 4]}>
-                    <Projects />
-                </Parallax>
-                <Parallax opacity={[-1.5, 4]}>
-                    <ContactMe darkmode={darkmode} setDarkmode={setDarkmode} />
-                </Parallax>
-                <Fab
-                    size="medium"
-                    color="primary"
-                    aria-label="add"
-                    href="#"
-                    sx={{ position: "fixed", bottom: 60, right: 60 }}
-                >
-                    <KeyboardArrowUpIcon />
-                </Fab>
+                <div style={{ maxWidth: "1200px", margin: "auto" }}>
+                    <LandingPage />
+                    <Parallax opacity={[3, -1.2]}>
+                        <About />
+                    </Parallax>
+                    <Parallax opacity={[3, -0.5]}>
+                        <Projects />
+                    </Parallax>
+                    <Parallax opacity={[3, -1]}>
+                        <ContactMe
+                            darkmode={darkmode}
+                            setDarkmode={setDarkmode}
+                        />
+                    </Parallax>
+                    <Fab
+                        size="medium"
+                        color="primary"
+                        aria-label="add"
+                        href="#"
+                        sx={{ position: "fixed", bottom: 60, right: 60 }}
+                    >
+                        <KeyboardArrowUpIcon />
+                    </Fab>
+                </div>
             </ParallaxProvider>
         </div>
     )
