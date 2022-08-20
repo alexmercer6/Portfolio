@@ -11,8 +11,6 @@ import MenuItem from "@mui/material/MenuItem"
 import IconButton from "@mui/material/IconButton"
 import { useState } from "react"
 
-import About from "../about/About"
-
 // import LaptopMacIcon from "@mui/icons-material/LaptopMac"
 
 function Navbar({ darkmode, setDarkmode }) {
@@ -29,9 +27,6 @@ function Navbar({ darkmode, setDarkmode }) {
         setDarkmode((prevMode) => !prevMode)
     }
 
-    const renderAboutMe = () => {
-        return <About />
-    }
     return (
         <div>
             <Box sx={{ margin: 0 }}>
